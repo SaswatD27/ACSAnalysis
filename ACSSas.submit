@@ -1,0 +1,16 @@
+############
+#
+# Example submit file for vanilla job
+#
+############
+getenv = True
+request_cpus = 2
+Requirements = TARGET.vm_name == "its-u18-nfs-20191029_gpu"
++request_gpus = 0
+Universe       = vanilla
+Executable     = ACSSas.sh
+Arguments      = $(d) $(m) $(l) $(p)
+input   = /dev/null
+output  = /dev/null
+error   = /dev/null
+# Queue d,m,l,p from run_RESNET50_model.in
